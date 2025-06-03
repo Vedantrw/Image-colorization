@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Colorize Your B&W Photo</title>
+</head>
+<body>
+    <h1>Upload a B&W Image</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required><br><br>
+        <button type="submit">Colorize</button>
+    </form>
+
+    {% if original %}
+        <h2>Results:</h2>
+        <p>Original:</p>
+        <img src="{{ original }}" width="256">
+        <p>ECCV16 Model:</p>
+        <img src="{{ eccv }}" width="256">
+        <p>SIGGRAPH17 Model:</p>
+        <img src="{{ sigg }}" width="256">
+    {% endif %}
+</body>
+</html>
